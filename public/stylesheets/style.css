@@ -1,0 +1,31 @@
+body {
+  
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+ 
+}
+
+a {
+  color: #00B7FF;
+}
+.icon{
+  width: 10px;
+}
+.cadeaux{
+  width: 40px;
+}
+.task{
+  margin-top: 110px;
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+.button{
+  height: 38px;
+  
+}
+.icon2{
+  margin-top: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

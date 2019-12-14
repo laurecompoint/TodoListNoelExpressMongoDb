@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>To Do List</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  </head>
+  <body style="background-image: url('./images/noel2.jpg'); background-size: 1512px; background-repeat: no-repeat;">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Noel</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    <a href="todos">{{title}}</a>
+    </li>
+
+  </ul>
+  </div>
+</nav>
+
+    <div class="my-5">
+        {% block body %}
+        {% endblock %}
+    </div>
+  </body>
+</html>

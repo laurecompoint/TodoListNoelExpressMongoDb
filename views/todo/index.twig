@@ -1,0 +1,40 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+<h1 class="ml-3 text-white">Add List Noel</h1>
+<form  method="post" action="todos"> 
+ 
+ 
+ <div class="input-group mb-3 col-5 float-left w-50">
+  <input type="text" class="form-control" name="name" placeholder="To Do List Noel">
+  <div class="input-group-append">
+    <button type="submit" class="btn btn-dark">
+    
+     <img src="./images/cadeaux.png" class="cadeaux" />
+    
+    </button>
+  </div>
+</div>
+
+</form>
+ 
+<div class="task ml-1" >
+
+
+{% for todo in todos %}
+<div class="input-group mb-3 mb-3 col-3">
+  <div class="input-group-prepend">
+
+    <form method="post" action="/todos/delete/{{todo.id}}">
+          <button type="submit" class="button btn-dark"><i class='fas fa-trash'  style='font-size:15px; color: red;'></i></button>
+    </form>
+  </div>
+  <form method="post" action="/todos/update/{{todo.id}}">
+       <input type="text" class="form-control" name="name" value="{{todo.name}}" placeholder="Task" v-on:keyup.enter="send"  aria-describedby="basic-addon1">
+  </form>
+  
+</div>
+ {% endfor %}
+{% endblock %} 
+
+</div> 
