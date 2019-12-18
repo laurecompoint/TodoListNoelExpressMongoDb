@@ -3,16 +3,22 @@ var router = express.Router();
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 var alert = require('alert-node');
+
 const TodoModel = mongoose.model('TodoList', new Schema({ name: String }));
 
 //get task
 router.get('/', function (req, res, next) {
-    TodoModel.find(function (err, todos, count) {
+
+    TodoModel.find(function (err, todos) {
+        if (err) {
+            res.send("erreur !!")
+        }
         res.render('todo/index', {
             todos: todos
 
         });
     });
+
 });
 //delete task
 router.post('/delete/:id', function (req, res, next) {
@@ -30,7 +36,7 @@ router.post('/update/:id', function (req, res, next) {
 
         if (!req.body.name == '') {
             todos.name = req.body.name;
-            todos.save(function (err, todos, count) {
+            todos.save(function (err, todos) {
                 res.redirect('/todos');
             });
         }
